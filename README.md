@@ -28,22 +28,7 @@ claude
 - **追加のみ**: 既存ファイルを保持し、新しいファイルのみ追加
 - **選択インストール**: skills/やcommands/など、選んだものだけコピー
 
-### 方法2: セットアップスクリプト
-
-```bash
-# 1. リポジトリをクローン
-git clone https://github.com/xxarupakaxx/biz-claude.git
-cd biz-claude
-
-# 2. セットアップスクリプトを実行（全ファイル上書き）
-./setup.sh
-
-# 3. Claude Codeを起動してガイドツアー
-claude
-/guide
-```
-
-### 方法3: 手動インストール
+### 方法2: 手動インストール
 
 ```bash
 # 1. リポジトリをクローン

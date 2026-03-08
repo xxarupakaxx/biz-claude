@@ -1,6 +1,6 @@
 ---
 name: update-inst
-description: "設定の改善。Claudeが間違いを犯した際に、再発防止のためCLAUDE.mdやスキルを更新。`/update-inst <間違えた内容>` で使用。"
+description: "設定の改善・最適化。「設定を改善して」「間違えたから直して」「再発防止して」「ルールを追加して」などの依頼時に使用。Claudeが間違いを犯した際に、CLAUDE.mdやスキルを更新。"
 ---
 
 # 設定改善スキル

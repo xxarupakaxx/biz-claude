@@ -1,6 +1,6 @@
 ---
 name: knowledge-capture
-description: "作業完了後に知見を構造化保存。memories/にインデックス、solutions/に詳細を保存し、後で検索可能に。"
+description: "知見を構造化して保存。「知見を保存して」「学んだことを記録」「後で使えるように保存」などの依頼時に使用。memories/にインデックス、solutions/に詳細を保存し、後で検索可能に。"
 type: component
 ---
 

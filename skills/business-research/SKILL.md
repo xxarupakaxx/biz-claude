@@ -1,6 +1,6 @@
 ---
 name: business-research
-description: "調査目的を明確化し、適切な情報収集方法を提案。WebSearch/deepwiki/Context7を活用して構造化された調査結果を作成。"
+description: "調査・リサーチを実行。「〇〇について調べて」「競合を分析して」「市場調査して」「情報収集して」などの依頼時に使用。WebSearch/deepwiki/Context7を活用して構造化された調査結果を作成。"
 type: interactive
 ---
 

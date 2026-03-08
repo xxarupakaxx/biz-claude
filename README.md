@@ -67,6 +67,11 @@ claude
 │   ├── report-writing/          # レポート作成
 │   ├── prd-writing/             # PRD作成
 │   ├── brainstorming/           # アイデア探索
+│   ├── jobs-to-be-done/         # JTBD分析
+│   ├── user-story/              # ユーザーストーリー
+│   ├── user-story-mapping/      # ストーリーマップ
+│   ├── prioritization-advisor/  # 優先順位付け支援
+│   ├── market-sizing/           # 市場規模試算
 │   ├── knowledge-capture/       # 知見キャプチャ
 │   ├── agent-memory/            # メモリ操作
 │   ├── cleanup-knowledge/       # 知見整理
@@ -133,6 +138,16 @@ claude
 |-------|------|-----------|
 | `business-research` | リサーチ・調査 | 「競合Aについて調べて」 |
 | `brainstorming` | アイデア探索 | 「新機能のアイデアを整理したい」 |
+
+#### PM（プロダクトマネジメント）系
+
+| スキル | 説明 | 使い方の例 |
+|-------|------|-----------|
+| `jobs-to-be-done` | 顧客ニーズ分析 | 「顧客のジョブを整理して」 |
+| `user-story` | ユーザーストーリー | 「この機能のストーリーを書いて」 |
+| `user-story-mapping` | ストーリーマップ | 「バックログを整理してMVPを決めたい」 |
+| `prioritization-advisor` | 優先順位付け | 「何から着手すべき？」 |
+| `market-sizing` | 市場規模試算 | 「この市場のTAMを計算して」 |
 
 #### 知見管理系
 

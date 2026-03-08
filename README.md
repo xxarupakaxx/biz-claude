@@ -11,14 +11,31 @@
 
 ## インストール
 
-### 方法1: セットアップスクリプト（推奨）
+### 方法1: /setupコマンド（推奨）
 
 ```bash
 # 1. リポジトリをクローン
 git clone https://github.com/xxarupakaxx/biz-claude.git
 cd biz-claude
 
-# 2. セットアップスクリプトを実行
+# 2. Claude Codeを起動してセットアップコマンドを実行
+claude
+/setup
+```
+
+対話形式で以下を選択できます：
+- **新規インストール**: 全ファイルをコピー
+- **追加のみ**: 既存ファイルを保持し、新しいファイルのみ追加
+- **選択インストール**: skills/やcommands/など、選んだものだけコピー
+
+### 方法2: セットアップスクリプト
+
+```bash
+# 1. リポジトリをクローン
+git clone https://github.com/xxarupakaxx/biz-claude.git
+cd biz-claude
+
+# 2. セットアップスクリプトを実行（全ファイル上書き）
 ./setup.sh
 
 # 3. Claude Codeを起動してガイドツアー
@@ -26,7 +43,7 @@ claude
 /guide
 ```
 
-### 方法2: 手動インストール
+### 方法3: 手動インストール
 
 ```bash
 # 1. リポジトリをクローン
@@ -39,27 +56,12 @@ cp -r context ~/.claude/
 cp -r rules ~/.claude/
 cp -r skills ~/.claude/
 cp -r commands ~/.claude/
-cp -r agents ~/.claude/
+cp -r hooks ~/.claude/
+cp -r docs ~/.claude/
 
 # 3. 確認
 claude
 /guide
-```
-
-### 方法3: 既存設定とマージ
-
-既に`~/.claude/`に設定がある場合:
-
-```bash
-# 1. このリポジトリをクローン
-git clone https://github.com/xxarupakaxx/biz-claude.git
-
-# 2. 必要なファイルを選択してコピー
-# 例: skills/のみコピー
-cp -r biz-claude/skills/* ~/.claude/skills/
-
-# 3. CLAUDE.mdはマージ（内容を確認して追記）
-cat biz-claude/CLAUDE.md >> ~/.claude/CLAUDE.md
 ```
 
 ## ディレクトリ構造
@@ -90,7 +92,12 @@ cat biz-claude/CLAUDE.md >> ~/.claude/CLAUDE.md
 │   ├── guide.md                 # ガイドツアー
 │   ├── workflow.md              # ワークフロー確認
 │   ├── skills.md                # スキル一覧
-│   └── lfg.md                   # 自律ワークフロー
+│   ├── lfg.md                   # 自律ワークフロー
+│   └── setup.md                 # セットアップコマンド
+├── hooks/
+│   └── check-dangerous-command.sh  # 危険コマンド検出
+├── docs/
+│   └── CHEATSHEET.md            # コマンド早見表（印刷用）
 └── agents/
     ├── researcher.md            # リサーチャーエージェント
     └── reviewer.md              # レビューアーエージェント
@@ -118,6 +125,11 @@ claude
 | `/skills` | スキル詳細リファレンス：各スキルの目的、使い方、出力形式 | 使い方を調べたい人 |
 | `/workflow` | 作業フローの詳細を確認 | フローを理解したい人 |
 | `/lfg <タスク>` | 自律ワークフローでタスクを実行 | タスクを任せたい人 |
+| `/setup` | 対話型セットアップ | インストール時 |
+
+### チートシート
+
+印刷して手元に置ける早見表: `docs/CHEATSHEET.md`
 
 ### スキル一覧
 
@@ -205,6 +217,25 @@ Claude:
 ```
 
 次回のタスクでは、過去の知見が自動的に参照されます。
+
+## 安全対策
+
+ビジネスユーザーが安心して使えるように、以下の安全対策が組み込まれています：
+
+### 危険コマンドの検出
+
+`hooks/check-dangerous-command.sh`が以下のコマンドを検出し、実行前に確認を求めます：
+
+| コマンド | 説明 |
+|---------|------|
+| `rm -rf` | ファイル/ディレクトリを再帰的に強制削除 |
+| `git push --force` | リモートの履歴を上書き |
+| `git reset --hard` | コミットされていない変更を全て破棄 |
+| `git clean -fd` | 追跡されていないファイルを全て削除 |
+
+### コマンドの説明
+
+Claudeはシェルコマンドを実行する前に、何をするコマンドか説明します。
 
 ## カスタマイズ
 

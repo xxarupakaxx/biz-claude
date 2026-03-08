@@ -11,41 +11,42 @@
 
 ## インストール
 
-### 方法1: 手動インストール（推奨）
-
-1. **リポジトリをクローン**
+### 方法1: セットアップスクリプト（推奨）
 
 ```bash
+# 1. リポジトリをクローン
 git clone https://github.com/xxarupakaxx/biz-claude.git
 cd biz-claude
+
+# 2. セットアップスクリプトを実行
+./setup.sh
+
+# 3. Claude Codeを起動してガイドツアー
+claude
+/guide
 ```
 
-2. **~/.claude/にコピー**
+### 方法2: 手動インストール
 
 ```bash
-# バックアップ（既存設定がある場合）
-cp -r ~/.claude ~/.claude.backup
+# 1. リポジトリをクローン
+git clone https://github.com/xxarupakaxx/biz-claude.git
+cd biz-claude
 
-# ファイルをコピー
+# 2. ~/.claude/にコピー
 cp CLAUDE.md ~/.claude/
 cp -r context ~/.claude/
 cp -r rules ~/.claude/
 cp -r skills ~/.claude/
 cp -r commands ~/.claude/
 cp -r agents ~/.claude/
-```
 
-3. **確認**
-
-```bash
-# Claude Codeを起動
+# 3. 確認
 claude
-
-# ガイドツアーを実行
 /guide
 ```
 
-### 方法2: 既存設定とマージ
+### 方法3: 既存設定とマージ
 
 既に`~/.claude/`に設定がある場合:
 

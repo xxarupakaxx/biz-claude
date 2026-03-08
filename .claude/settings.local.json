@@ -5,7 +5,9 @@
       "WebSearch",
       "mcp__deepwiki__read_wiki_contents",
       "mcp__deepwiki__read_wiki_structure",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(chmod:*)"
     ]
   }
 }

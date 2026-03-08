@@ -47,6 +47,11 @@
 | `knowledge-capture` | 知見のキャプチャ・保存 |
 | `prd-writing` | PRD（製品要件定義書）作成 |
 | `brainstorming` | アイデア探索・設計 |
+| `update-inst` | 設定の改善・最適化 |
+| `agent-memory` | 「覚えて」「思い出して」でメモリ操作 |
+| `ship-learn-next` | 学習内容を実行計画に変換 |
+| `kaizen` | 業務の継続的改善 |
+| `cleanup-knowledge` | 知見ファイルの整理・統合 |
 
 ## 質問
 

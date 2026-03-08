@@ -1,0 +1,154 @@
+---
+name: knowledge-capture
+description: "作業完了後に知見を構造化保存。memories/にインデックス、solutions/に詳細を保存し、後で検索可能に。"
+type: component
+---
+
+# 知見キャプチャ
+
+作業中に得られた知見を構造化して保存し、将来のタスクで再利用可能にする。
+
+## Purpose
+
+価値ある発見・知見を失わずに蓄積し、同じ問題に再度直面した際に素早く解決できるようにする。
+
+## Key Concepts
+
+### 保存すべき知見
+
+| カテゴリ | 例 |
+|---------|-----|
+| 調査結果 | 競合分析の知見、市場動向 |
+| 解決策 | 問題解決のプロセス・結果 |
+| ベストプラクティス | 効率的な進め方、便利なツール |
+| 失敗からの学び | 避けるべきパターン、注意点 |
+
+### 2層構造
+
+| 層 | 場所 | 用途 |
+|----|------|------|
+| インデックス | `memories/` | 検索用の要約・タグ |
+| 詳細 | `solutions/` | 再利用可能な詳細情報 |
+
+## Application
+
+### Step 1: 知見の特定
+
+作業を振り返り、保存すべき知見を特定:
+- 新しく発見した有用な情報はあったか
+- 問題をどう解決したか
+- 他の人にも役立つ知見はあるか
+
+### Step 2: カテゴリ決定
+
+以下のカテゴリから選択:
+
+| カテゴリ | 内容 |
+|---------|------|
+| `research/` | 調査・リサーチ結果 |
+| `handover/` | 引き継ぎ関連 |
+| `meeting/` | 会議・ミーティング |
+| `report/` | レポート・報告書 |
+| `strategy/` | 戦略・企画 |
+
+### Step 3: インデックス作成（memories/）
+
+```yaml
+---
+summary: "1-2行の要約（検索時の判断材料）"
+created: YYYY-MM-DD
+tags: [tag1, tag2]
+category: research
+related:
+  - .local/memory/YYMMDD_task-name/
+---
+
+# タイトル
+
+## 要点
+- ポイント1
+- ポイント2
+
+## 詳細
+→ solutions/category/filename.md を参照
+```
+
+### Step 4: 詳細作成（solutions/）※必要に応じて
+
+詳細な情報が必要な場合:
+
+```yaml
+---
+title: "知見のタイトル"
+category: "research"
+tags: [tag1, tag2]
+summary: "1行サマリー"
+created: YYYY-MM-DD
+---
+
+# タイトル
+
+## 背景
+[なぜこの知見が有用か]
+
+## 内容
+[詳細な知見・手法]
+
+## ポイント
+- ポイント1
+- ポイント2
+
+## 参考情報
+- [URL等]
+```
+
+### Step 5: 保存確認
+
+AskUserQuestionで保存内容を確認:
+- このまま保存
+- 修正して保存
+- 保存しない
+
+## Examples
+
+### 例: 競合調査の知見を保存
+
+```
+作業内容:
+競合Aの機能を調査し、比較表を作成した。
+調査の過程で効率的な競合分析フレームワークを発見。
+
+保存する知見:
+1. memories/research/competitor-analysis-framework.md
+   - 競合分析の効率的なフレームワーク
+
+2. solutions/research/competitor-analysis-framework.md
+   - フレームワークの詳細手順
+   - 使用したツール
+   - テンプレート
+```
+
+### 例: 失敗からの学び
+
+```
+作業内容:
+初回の引き継ぎ資料で環境情報が不足していた。
+
+保存する知見:
+memories/handover/environment-info-checklist.md
+- 環境情報のチェックリスト
+- 見落としやすいポイント
+```
+
+## Common Pitfalls
+
+| 落とし穴 | 結果 | 対策 |
+|---------|------|------|
+| 何でも保存 | ノイズが増える | 再利用価値があるものだけ |
+| タグ不足 | 検索で見つからない | 関連キーワードをタグに |
+| サマリー不明確 | 検索結果から内容が分からない | 具体的な1-2行で記述 |
+
+## References
+
+- `@context/memory-file-formats.md`: メモリファイル形式
+- `@rules/knowledge-management.md`: 知見管理ルール

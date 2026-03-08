@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__deepwiki__ask_question",
+      "WebSearch",
+      "mcp__deepwiki__read_wiki_contents",
+      "mcp__deepwiki__read_wiki_structure",
+      "Bash(git add:*)"
+    ]
+  }
+}

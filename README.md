@@ -16,16 +16,19 @@
 git clone https://github.com/xxarupakaxx/biz-claude.git
 cd biz-claude
 
-# 2. ~/.claude/ にコピー（user-levelで全プロジェクトに適用）
-cp -r .claude/* ~/.claude/
+# 2. ~/.claude/ に追加コピー（既存ファイルは上書きしない）
+rsync -a --ignore-existing .claude/ ~/.claude/
 
 # 3. Claude Codeを起動
 claude
 ```
 
+`--ignore-existing` により、既存のカスタマイズ済みファイルは保護されます。
+既存ファイルも含めて更新したい場合は `rsync -a .claude/ ~/.claude/` を使用してください。
+
 ## ディレクトリ構造
 
-リポジトリの `.claude/` がそのまま `~/.claude/` にコピーされます。
+リポジトリの `.claude/` が `~/.claude/` に追加コピーされます。
 
 ```
 .claude/

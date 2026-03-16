@@ -57,6 +57,7 @@
 | `ship-learn-next` | 学習内容を実行計画に変換 |
 | `kaizen` | 業務の継続的改善 |
 | `cleanup-knowledge` | 知見ファイルの整理・統合 |
+| `summarizing-daily-work` | 日報の自動生成（「日報を書いて」「今日のまとめ」） |
 
 ## 質問
 
